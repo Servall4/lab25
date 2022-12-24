@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
+
+  <CalendarView
+    android:id="@+id/calendarView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/title"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="250dp"
+    android:orientation="vertical"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageView
+    android:id="@+id/mood"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintLeft_toRightOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="@id/radioGroup2"
+    app:layout_constraintTop_toBottomOf="@id/calendarView"
+    app:srcCompat="@drawable/good" />
+
+  <RatingBar
+    android:id="@+id/ratingBar"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:background="@color/ratingBarColor"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintLeft_toRightOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/title"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toTopOf="@id/mood"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/calendarView" />
+
+  <TextView
+    android:id="@+id/tevent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="32dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:text="@string/event"
+    app:layout_constraintBottom_toTopOf="@id/vevent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/title" />
+
+  <EditText
+    android:id="@+id/vevent"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Название"
+    android:inputType="text"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tevent" />
+
+  <TextView
+    android:id="@+id/ttime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginBottom="10dp"
+    android:text="@string/event_time"
+    android:textColor="@color/black"
+    app:layout_constraintBottom_toTopOf="@+id/tdate"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/time"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/vevent" />
+
+  <EditText
+    android:id="@+id/time"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="56dp"
+    android:layout_marginRight="24dp"
+    android:ems="10"
+    android:hint="Время"
+    android:inputType="time"
+    app:layout_constraintBottom_toTopOf="@id/vdata"
+    app:layout_constraintRight_toLeftOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/vevent" />
+
+  <TextView
+    android:id="@+id/tdate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:text="@string/event_date"
+    android:textColor="@color/black"
+    app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="@id/vdata"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ttime" />
+
+  <EditText
+    android:id="@+id/vdata"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="56dp"
+    android:layout_marginRight="24dp"
+    android:ems="10"
+    android:hint="Дата"
+    android:inputType="date"
+    app:layout_constraintBottom_toTopOf="@id/ratingBar"
+    app:layout_constraintLeft_toRightOf="@id/tdate"
+    app:layout_constraintRight_toLeftOf="@id/guideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/time" />
+
+  <EditText
+    android:id="@+id/post"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:hint="@string/ps"
+    android:inputType="text"
+    app:layout_constraintBaseline_toBottomOf="parent"
+    app:layout_constraintBaseline_toTopOf="parent"
+    app:layout_constraintLeft_toRightOf="@id/guideline"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintStart_toStartOf="@id/radioGroup2"
+    app:layout_constraintTop_toBottomOf="@id/radioGroup2" />
+
+  <RadioGroup
+    android:id="@+id/radioGroup2"
+    android:layout_width="150dp"
+    android:layout_height="0dp"
+    android:checkedButton="@id/good"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/mood">
+
+    <RadioButton
+      android:id="@+id/good"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/good" />
+
+    <RadioButton
+      android:id="@+id/bad"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/bad" />
+
+  </RadioGroup>
+
+  <Button
+    android:id="@+id/save"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginRight="40dp"
+    android:layout_marginBottom="8dp"
+    android:text="@string/save"
+    android:textSize="8sp"
+    app:layout_constraintBottom_toTopOf="@id/ratingBar"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/post" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
